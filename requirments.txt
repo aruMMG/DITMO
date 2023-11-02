@@ -1,0 +1,6 @@
+diffusers
+matplotlib
+opencv-python
+torch
+scikit-image
+transformers
