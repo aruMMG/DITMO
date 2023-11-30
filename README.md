@@ -16,3 +16,7 @@ To create the segmentation mask for your project, follow these steps:
    bash segment.sh [input_path] [output_path] [weight_file]
 ~~~
 </pre>
+
+## requirement for extra modules
+pip install imageio
+pip install timm
