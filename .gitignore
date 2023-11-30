@@ -1,2 +1,4 @@
 check.py
-check_folder
+check_folder/*
+utils/ldr2hdr.pth
+utils/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth
