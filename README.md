@@ -19,4 +19,5 @@ To create the segmentation mask for your project, follow these steps:
 
 ## requirement for extra modules
 pip install imageio
+
 pip install timm
