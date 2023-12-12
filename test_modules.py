@@ -24,19 +24,19 @@
 # Uncomment and run to tests santos model.
 
 
-# import numpy as np
-# from modules.santos import get_saturated_regions, writeEXR, writeLDR, santos
-# from utils.ditmo_utils import resize_and_pad_image
+import numpy as np
+from modules.santos import get_saturated_regions, writeEXR, writeLDR, santos
+from utils.ditmo_utils import resize_and_pad_image
 
-# image_path = "/home/aru/WMG/DITMO/image_resized/a0636_rsz.png"
-# image = resize_and_pad_image(image_path)
-# # load image
-# # image = load_image(image_path)
-# image = np.asarray(image.convert('RGB')).astype(np.float32)/255.0
-# # get saturation mask
-# conv_mask = 1 - get_saturated_regions(image)
+image_path = "/home/aru/WMG/DITMO/image_resized/a0636_rsz.png"
+image = resize_and_pad_image(image_path)
+# load image
+# image = load_image(image_path)
+image = np.asarray(image.convert('RGB')).astype(np.float32)/255.0
+# get saturation mask
+conv_mask = 1 - get_saturated_regions(image)
 
-# H, mask = santos(image, conv_mask)
-# writeEXR(H, "check_folder/img.exr")
-# writeLDR(mask, "check_folder/img.png")
+H, mask = santos(image, conv_mask)
+writeEXR(H, "check_folder/img.exr")
+writeLDR(mask, "check_folder/img.png")
 # =======================================

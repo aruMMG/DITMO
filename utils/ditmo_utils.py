@@ -84,3 +84,31 @@ def resize_and_pad_image(img, target_size=512):
     padded_img = ImageOps.expand(resized_img, border=(0, 0, pad_width, pad_height), fill=0)
 
     return padded_img
+
+def get_higher_bracket(im, factor):
+    im = im.astype('float32')
+    im = (im ** 2.2) * factor
+    im = im ** (1/2.2)
+    im = np.clip(im, 0, 255)
+    return im
+
+def predict_bracket(original_image, binary_mask):
+    # Load the images
+    binary_mask = binary_mask // 255
+    for i in range(5):
+
+        higher_exposed_image = get_higher_bracket(original_image, 2**(i+1))
+        hsv_image = cv2.cvtColor(higher_exposed_image, cv2.COLOR_BGR2HSV)
+
+        saturated_mask = (hsv_image[:, :, 2] > 245).astype(np.uint8)
+
+        masked_saturated = cv2.bitwise_and(saturated_mask, binary_mask)
+
+        total_pixels = np.sum(binary_mask)
+        oversaturated_pixels = np.sum(masked_saturated)
+        percentage_oversaturation = (oversaturated_pixels / total_pixels) * 100
+
+        if percentage_oversaturation > 98:
+            # cv2.imwrite("check_folder/higher_exposed_image98.png", higher_exposed_image.astype(np.uint8))
+            return i+1
+    return False
