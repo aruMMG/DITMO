@@ -11,11 +11,7 @@ To create the segmentation mask for your project, follow these steps:
 2. Copy the `segment.sh` script provided in this project to the FastFCN directory.
 
 3. Run the following command in your terminal, replacing `[input_path]`, `[output_path]`, and `[weight_file]` with your specific file paths and weight file:
-<pre>   
-~~~bash
-   bash segment.sh [input_path] [output_path] [weight_file]
-~~~
-</pre>
+   <code> bash segment.sh [input_path] [output_path] [weight_file] </code>
 
 ## requirement for extra modules
 pip install imageio
