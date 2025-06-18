@@ -9,11 +9,11 @@
 
 Results from DITMO using Stable Diffusion-based inpainting over multiple exposures:
 Results from DITMO pipeline with inpainting from the Stable Diffusion model over a range of images. The figures showing details at multiple exposure. 
-![Result_SD](https://github.com/aruMMG/DITMO/blob/main/assets/result_SD.jpg?raw=true)
+![Result_SD](https://github.com/aruMMG/DITMO/blob/main/assets/result_SD.png?raw=true)
 
 ### ControlNet Inpainting
 Results using ControlNet-guided inpainting:
-![Result_CN](https://github.com/aruMMG/DITMO/blob/main/assets/result_CN.jpg?raw=true)
+![Result_CN](https://github.com/aruMMG/DITMO/blob/main/assets/result_CN.png?raw=true)
 
 
 ## Getting started
